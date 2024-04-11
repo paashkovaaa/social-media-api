@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import GenericViewSet
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
-from social_media_system.permissions import IsOwnerProfileOrReadOnly
+from social_media_system.permissions import IsOwnerOrReadOnly
 from user.models import User
 from user.serializers import (
     UserRegistrationSerializer,
@@ -23,7 +23,7 @@ class ManageUserView(generics.RetrieveUpdateDestroyAPIView):
         JWTAuthentication,
     ]
     permission_classes = [
-        IsOwnerProfileOrReadOnly,
+        IsOwnerOrReadOnly,
     ]
 
     def get_object(self):
