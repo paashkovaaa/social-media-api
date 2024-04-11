@@ -13,10 +13,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterUniqueTogether(
-            name="follow",
-            unique_together={("follower", "followed_user")},
-        ),
         migrations.AddField(
             model_name="follow",
             name="followed_user",
